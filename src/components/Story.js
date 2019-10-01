@@ -5,24 +5,41 @@ class Story extends Component {
     upVoteStatus: "",
     downVoteStatus: "",
     score: this.props.score,
-    upvoteState: false,
-    downvoteState: false
+    upVoteState: false,
+    downVoteState: false
   };
 
   upVoteClick = () => {
-    this.setState({
-      upVoteStatus: "green-text",
-      downVoteStatus: "",
-      score: this.state.score + 1
-    });
+    if (!this.state.upVoteStatus) {
+      this.setState({
+        upVoteStatus: "green-text",
+        downVoteStatus: "",
+        score: this.props.score + 1,
+        upVoteState: true
+      });
+    } else {
+      this.setState({
+        upVoteStatus: "",
+        score: this.props.score,
+        upVoteState: false
+      });
+    }
   };
 
   downVoteClick = () => {
-    this.setState({
-      downVoteStatus: "red-text",
-      upVoteStatus: "",
-      score: this.state.score - 1
-    });
+    if (!this.state.downVoteStatus) {
+      this.setState({
+        downVoteStatus: "red-text",
+        upVoteStatus: "",
+        score: this.props.score - 1
+      });
+    } else {
+      this.setState({
+        downVoteStatus: "",
+        score: this.props.score,
+        downoteState: false
+      });
+    }
   };
 
   render() {
