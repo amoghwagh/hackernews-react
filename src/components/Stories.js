@@ -4,7 +4,7 @@ import stories from "../data/stories.json";
 
 class Stories extends Component {
   state = {
-    stories: stories
+    stories: stories.sort((a, b) => b.score - a.score)
   };
   render() {
     return this.state.stories.map(story => {
