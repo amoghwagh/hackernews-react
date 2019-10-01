@@ -72,7 +72,7 @@ class Story extends Component {
             {this.props.story.submission_time.split("").slice(10)}
           </span> | <span>hide</span> |{" "}
           <a>
-            <span>{this.props.story.kids.length} comments</span>
+            <span>{this.props.story.comments.length} comments</span>
           </a>
         </span>
       </li>
