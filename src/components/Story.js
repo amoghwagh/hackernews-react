@@ -12,14 +12,16 @@ class Story extends Component {
   upVoteClick = () => {
     this.setState({
       upVoteStatus: "green-text",
-      downVoteStatus: ""
+      downVoteStatus: "",
+      score: this.state.score + 1
     });
   };
 
   downVoteClick = () => {
     this.setState({
       downVoteStatus: "red-text",
-      upVoteStatus: ""
+      upVoteStatus: "",
+      score: this.state.score - 1
     });
   };
 
