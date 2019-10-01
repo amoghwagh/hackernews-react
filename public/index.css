@@ -41,5 +41,12 @@ nav a {
 }
 
 .tags {
-  font-size: 0.8rem;
+  color: grey;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.title {
+  color: black;
+  font-size: 1.6rem !important;
 }
