@@ -4,7 +4,7 @@ class Story extends Component {
   state = {
     upVoteStatus: "",
     downVoteStatus: "",
-    score: this.props.score,
+    score: this.props.story.score,
     upVoteState: false,
     downVoteState: false
   };
@@ -14,13 +14,13 @@ class Story extends Component {
       this.setState({
         upVoteStatus: "green-text",
         downVoteStatus: "",
-        score: this.props.score + 1,
+        score: this.props.story.score + 1,
         upVoteState: true
       });
     } else {
       this.setState({
         upVoteStatus: "",
-        score: this.props.score,
+        score: this.props.story.score,
         upVoteState: false
       });
     }
@@ -31,13 +31,13 @@ class Story extends Component {
       this.setState({
         downVoteStatus: "red-text",
         upVoteStatus: "",
-        score: this.props.score - 1
+        score: this.props.story.score - 1
       });
     } else {
       this.setState({
         downVoteStatus: "",
-        score: this.props.score,
-        downoteState: false
+        score: this.props.story.score,
+        downVoteState: false
       });
     }
   };
@@ -53,8 +53,8 @@ class Story extends Component {
             arrow_drop_up
           </i>
         </a>
-        <a href={this.props.url}>
-          <span className="title"> {this.props.title} </span>
+        <a href={this.props.story.url}>
+          <span className="title"> {this.props.story.title} </span>
         </a>
         <br />
         <a
@@ -67,11 +67,12 @@ class Story extends Component {
         </a>
         <span className="tags">
           <span> {this.state.score} points by </span>
-          <span>{this.props.user} posted on </span>
-          <span>{this.props.time.split("").slice(10)}</span> | <span>hide</span>{" "}
-          |{" "}
+          <span>{this.props.story.by} posted on </span>
+          <span>
+            {this.props.story.submission_time.split("").slice(10)}
+          </span> | <span>hide</span> |{" "}
           <a>
-            <span>{this.props.kids.length} comments</span>
+            <span>{this.props.story.kids.length} comments</span>
           </a>
         </span>
       </li>
