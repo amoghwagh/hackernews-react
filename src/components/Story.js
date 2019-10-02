@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Comments from "./CommentSection";
 
 class Story extends Component {
   state = {
@@ -75,6 +76,7 @@ class Story extends Component {
             <span>{this.props.story.comments.length} comments</span>
           </a>
         </span>
+        <Comments story={this.props.story} />
       </li>
     );
   }
