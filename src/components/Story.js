@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Comments from "./CommentSection";
+import CommentSection from "./CommentSection";
+import uuidv4 from "uuid";
 
 class Story extends Component {
   state = {
@@ -9,6 +10,7 @@ class Story extends Component {
     upVoteState: false,
     downVoteState: false,
     showCommentState: true,
+    comments: this.props.story.comments,
     textValue: ""
   };
 
@@ -58,7 +60,15 @@ class Story extends Component {
   };
 
   addComment = () => {
-    console.log(this.state.textValue);
+    const newComment = {
+      item_id: uuidv4(),
+      text: this.state.textValue,
+      by: "Amogh"
+    };
+    const newCommentsList = [...this.state.comments, newComment];
+    this.setState({
+      comments: newCommentsList
+    });
   };
 
   render() {
@@ -97,8 +107,9 @@ class Story extends Component {
           </a>
         </span>
         {this.state.showCommentState ? (
-          <Comments
+          <CommentSection
             story={this.props.story}
+            comments={this.state.comments}
             textValue={this.state.textValue}
             handleChange={this.handleChange}
             addComment={this.addComment}
