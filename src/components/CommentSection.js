@@ -6,7 +6,7 @@ class Comments extends Component {
   };
   render() {
     return (
-      <div class="comment-section row container">
+      <div class="comment-section row">
         <div class="col s12 m6">
           <div class="card white">
             <div class="card-content white-text">

@@ -7,7 +7,8 @@ class Story extends Component {
     downVoteStatus: "",
     score: this.props.story.score,
     upVoteState: false,
-    downVoteState: false
+    downVoteState: false,
+    showCommentState: true
   };
 
   upVoteClick = () => {
@@ -43,6 +44,12 @@ class Story extends Component {
     }
   };
 
+  toggleCommentState = () => {
+    this.setState({
+      showCommentState: !this.state.showCommentState
+    });
+  };
+
   render() {
     return (
       <li className="collection-item">
@@ -72,11 +79,13 @@ class Story extends Component {
           <span>
             {this.props.story.submission_time.split("").slice(10)}
           </span> | <span>hide</span> |{" "}
-          <a>
-            <span>{this.props.story.comments.length} comments</span>
+          <a href="javascript:void(0)">
+            <span onClick={this.toggleCommentState}>
+              {this.props.story.comments.length} comments
+            </span>
           </a>
         </span>
-        <Comments />
+        {this.state.showCommentState ? <Comments /> : null}
       </li>
     );
   }
