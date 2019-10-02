@@ -68,4 +68,25 @@ nav a {
 
 .comment-text {
   font-size: 1.65em;
+  display: flex;
+}
+
+.counter-section {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-right: 1.2em;
+}
+
+.counter-section span {
+  text-align: center;
+}
+.counter-section i {
+  font-size: 3em !important;
+  color: grey;
+}
+
+.counter-section .upvote {
+}
+
+.counter-section .downvote {
 }
