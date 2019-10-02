@@ -1,23 +1,8 @@
 import React, { Component } from "react";
+import Comment from "./Comment";
 
 class Comments extends Component {
-  renderComment = text => {
-    return (
-      <li class="collection-item white comment-text">
-        <div class="counter-section">
-          {" "}
-          <a href="javascript:void(0)" className="upvote">
-            <i className={"material-icons "}>arrow_drop_up</i>
-          </a>
-          <span>0</span>
-          <a href="javascript:void(0)" className="downvote">
-            <i className={"material-icons "}>arrow_drop_down</i>
-          </a>
-        </div>
-        <span>{text}</span>
-      </li>
-    );
-  };
+  renderComment = text => <Comment text={text} />;
   render() {
     return (
       <div className="comment-section row">
