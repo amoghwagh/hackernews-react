@@ -76,7 +76,7 @@ class Story extends Component {
             <span>{this.props.story.comments.length} comments</span>
           </a>
         </span>
-        <Comments story={this.props.story} />
+        <Comments />
       </li>
     );
   }
