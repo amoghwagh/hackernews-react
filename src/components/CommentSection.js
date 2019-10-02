@@ -6,7 +6,7 @@ class Comments extends Component {
   };
   render() {
     return (
-      <div class="row container">
+      <div class="comment-section row container">
         <div class="col s12 m6">
           <div class="card white">
             <div class="card-content white-text">
@@ -17,11 +17,14 @@ class Comments extends Component {
                       id="textarea1"
                       class="materialize-textarea"
                     ></textarea>
-                    <label for="textarea1">ADD NEW COMMENT</label>
+                    <label for="textarea1">New Comment</label>
                   </div>
+                  <a class="waves-effect waves-light btn">
+                    <i class="material-icons right">add</i>Add New Comment
+                  </a>
                 </div>
                 <div class="row">
-                  <ul class="collection black-text">
+                  <ul class="comment-box collection black-text">
                     {[0, 0, 0, 0].map(e => {
                       return this.renderComment("LOL");
                     })}

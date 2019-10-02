@@ -50,6 +50,15 @@ nav a {
   color: black;
   font-size: 1.6rem !important;
 }
+.comment-section .btn {
+  margin-left: 1em;
+  margin-top: -2em;
+}
+
+.comment-box {
+  margin: auto;
+  width: 90%;
+}
 
 .comment-text {
   font-size: 1.7em;
