@@ -69,6 +69,9 @@ class Story extends Component {
     this.setState({
       comments: newCommentsList
     });
+    this.setState({
+      textValue: ""
+    });
   };
 
   render() {

@@ -16,6 +16,7 @@ class Comments extends Component {
                     <textarea
                       id="textarea"
                       className="materialize-textarea"
+                      value={this.props.textValue}
                       onChange={this.props.handleChange}
                     ></textarea>
                     <label for="textarea">New Comment</label>
