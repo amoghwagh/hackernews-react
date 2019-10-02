@@ -3,6 +3,7 @@ import Comment from "./Comment";
 
 class Comments extends Component {
   renderComment = text => <Comment text={text} />;
+
   render() {
     return (
       <div className="comment-section row">
@@ -15,10 +16,14 @@ class Comments extends Component {
                     <textarea
                       id="textarea"
                       className="materialize-textarea"
+                      onChange={this.props.handleChange}
                     ></textarea>
                     <label for="textarea">New Comment</label>
                   </div>
-                  <a className="waves-effect waves-light btn">
+                  <a
+                    className="waves-effect waves-light btn"
+                    onClick={this.props.addComment}
+                  >
                     <i className="material-icons right">add</i>Add New Comment
                   </a>
                 </div>

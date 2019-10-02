@@ -8,7 +8,8 @@ class Story extends Component {
     score: this.props.story.score,
     upVoteState: false,
     downVoteState: false,
-    showCommentState: true
+    showCommentState: true,
+    textValue: ""
   };
 
   upVoteClick = () => {
@@ -50,6 +51,16 @@ class Story extends Component {
     });
   };
 
+  handleChange = event => {
+    this.setState({
+      textValue: event.target.value
+    });
+  };
+
+  addComment = () => {
+    console.log(this.state.textValue);
+  };
+
   render() {
     return (
       <li className="collection-item">
@@ -86,7 +97,12 @@ class Story extends Component {
           </a>
         </span>
         {this.state.showCommentState ? (
-          <Comments story={this.props.story} />
+          <Comments
+            story={this.props.story}
+            textValue={this.state.textValue}
+            handleChange={this.handleChange}
+            addComment={this.addComment}
+          />
         ) : null}
       </li>
     );
