@@ -8,7 +8,7 @@ class Stories extends Component {
   };
   render() {
     return this.state.stories.map(story => {
-      return <Story story={story} />;
+      return <Story key={story.item_id} story={story} />;
     });
   }
 }

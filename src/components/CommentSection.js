@@ -14,10 +14,10 @@ class Comments extends Component {
                 <div class="row">
                   <div class="input-field col s12">
                     <textarea
-                      id="textarea1"
+                      id="textarea"
                       class="materialize-textarea"
                     ></textarea>
-                    <label for="textarea1">New Comment</label>
+                    <label for="textarea">New Comment</label>
                   </div>
                   <a class="waves-effect waves-light btn">
                     <i class="material-icons right">add</i>Add New Comment
@@ -25,9 +25,7 @@ class Comments extends Component {
                 </div>
                 <div class="row">
                   <ul class="comment-box collection black-text">
-                    {[0, 0, 0, 0].map(e => {
-                      return this.renderComment("LOL");
-                    })}
+                    {this.props.story.comments.map(comment => {})}
                   </ul>
                 </div>
               </div>

@@ -85,7 +85,9 @@ class Story extends Component {
             </span>
           </a>
         </span>
-        {this.state.showCommentState ? <Comments /> : null}
+        {this.state.showCommentState ? (
+          <Comments story={this.props.story} />
+        ) : null}
       </li>
     );
   }
