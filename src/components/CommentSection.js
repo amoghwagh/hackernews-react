@@ -25,7 +25,9 @@ class Comments extends Component {
                 </div>
                 <div class="row">
                   <ul class="comment-box collection black-text">
-                    {this.props.story.comments.map(comment => {})}
+                    {this.props.story.comments.map(comment =>
+                      this.renderComment(comment.text)
+                    )}
                   </ul>
                 </div>
               </div>
