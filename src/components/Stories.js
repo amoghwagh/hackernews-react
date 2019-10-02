@@ -9,8 +9,6 @@ class Stories extends Component {
   render() {
     return this.state.stories.map(story => {
       return <Story story={story} />;
-
-      //
     });
   }
 }

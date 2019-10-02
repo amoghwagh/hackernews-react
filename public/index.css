@@ -50,3 +50,7 @@ nav a {
   color: black;
   font-size: 1.6rem !important;
 }
+
+.comment-text {
+  font-size: 1.7em;
+}

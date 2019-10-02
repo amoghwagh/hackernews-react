@@ -1,22 +1,33 @@
 import React, { Component } from "react";
 
 class Comments extends Component {
+  renderComment = text => {
+    return <li class="collection-item white comment-text">{text}</li>;
+  };
   render() {
     return (
       <div class="row container">
         <div class="col s12 m6">
-          <div class="card blue-grey darken-1">
+          <div class="card white">
             <div class="card-content white-text">
-              <span class="card-title">Card Title</span>
-              <p>
-                I am a very simple card. I am good at containing small bits of
-                information. I am convenient because I require little markup to
-                use effectively.
-              </p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-              <a href="#">This is a link</a>
+              <div class="row">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <textarea
+                      id="textarea1"
+                      class="materialize-textarea"
+                    ></textarea>
+                    <label for="textarea1">ADD NEW COMMENT</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <ul class="collection black-text">
+                    {[0, 0, 0, 0].map(e => {
+                      return this.renderComment("LOL");
+                    })}
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
