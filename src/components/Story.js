@@ -9,7 +9,7 @@ class Story extends Component {
     score: this.props.story.score,
     upVoteState: false,
     downVoteState: false,
-    showCommentState: true,
+    showCommentState: false,
     comments: this.props.story.comments,
     textValue: ""
   };
