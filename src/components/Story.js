@@ -15,12 +15,13 @@ class Story extends Component {
   };
 
   upVoteClick = () => {
-    if (!this.state.upVoteStatus) {
+    if (!this.state.upVoteState) {
       this.setState({
         upVoteStatus: "green-text",
         downVoteStatus: "",
         score: this.props.story.score + 1,
-        upVoteState: true
+        upVoteState: true,
+        downVoteState: false
       });
     } else {
       this.setState({
@@ -32,11 +33,13 @@ class Story extends Component {
   };
 
   downVoteClick = () => {
-    if (!this.state.downVoteStatus) {
+    if (!this.state.downVoteState) {
       this.setState({
         downVoteStatus: "red-text",
         upVoteStatus: "",
-        score: this.props.story.score - 1
+        score: this.props.story.score - 1,
+        downVoteState: true,
+        upVoteState: false
       });
     } else {
       this.setState({

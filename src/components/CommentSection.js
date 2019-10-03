@@ -22,7 +22,7 @@ class Comments extends Component {
                     <label for="textarea">New Comment</label>
                   </div>
                   <a
-                    className="waves-effect waves-light btn"
+                    className="waves-effect waves-light btn add-comment-button"
                     onClick={this.props.addComment}
                   >
                     <i className="material-icons right">add</i>Add New Comment

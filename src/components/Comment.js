@@ -10,10 +10,19 @@ class Comment extends Component {
   };
 
   upVoteClick = () => {
-    if (!this.state.upVoteStatus) {
+    if (this.state.downVoteState) {
       this.setState({
         upVoteStatus: "green-text",
         downVoteStatus: "",
+        downVoteState: false,
+        commentCounter: this.state.commentCounter + 2,
+        upVoteState: true
+      });
+    } else if (!this.state.upVoteState) {
+      this.setState({
+        upVoteStatus: "green-text",
+        downVoteStatus: "",
+        downVoteState: false,
         commentCounter: this.state.commentCounter + 1,
         upVoteState: true
       });
@@ -27,11 +36,20 @@ class Comment extends Component {
   };
 
   downVoteClick = () => {
-    if (!this.state.downVoteStatus) {
+    if (this.state.upVoteState) {
       this.setState({
         downVoteStatus: "red-text",
         upVoteStatus: "",
-        commentCounter: this.state.commentCounter - 1
+        upVoteState: false,
+        commentCounter: this.state.commentCounter - 2,
+        downVoteState: true
+      });
+    } else if (!this.state.downVoteState) {
+      this.setState({
+        downVoteStatus: "red-text",
+        upVoteStatus: "",
+        commentCounter: this.state.commentCounter - 1,
+        downVoteState: true
       });
     } else {
       this.setState({

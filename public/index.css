@@ -67,7 +67,7 @@ nav a {
 }
 
 .comment-text {
-  font-size: 1.65em;
+  font-size: 1.8em;
   display: flex;
 }
 
@@ -83,10 +83,4 @@ nav a {
 .counter-section i {
   font-size: 3em !important;
   color: grey;
-}
-
-.counter-section .upvote {
-}
-
-.counter-section .downvote {
 }
