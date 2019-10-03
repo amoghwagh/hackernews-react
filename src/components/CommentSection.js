@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Comment from "./Comment";
 
 class Comments extends Component {
-  renderComment = text => <Comment text={text} />;
+  renderComment = (text, by) => <Comment text={text} by={by} />;
 
   render() {
     return (
@@ -31,7 +31,7 @@ class Comments extends Component {
                 <div className="row">
                   <ul className="comment-box collection black-text">
                     {this.props.comments.map(comment =>
-                      this.renderComment(comment.text)
+                      this.renderComment(comment.text, comment.by)
                     )}
                   </ul>
                 </div>

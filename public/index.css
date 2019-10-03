@@ -84,3 +84,11 @@ nav a {
   font-size: 3em !important;
   color: grey;
 }
+
+.posted-by {
+  font-weight: bolder;
+}
+
+.post {
+  margin-left: 1em;
+}

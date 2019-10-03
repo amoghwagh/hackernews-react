@@ -84,7 +84,14 @@ class Comment extends Component {
             </i>
           </a>
         </div>
-        <span>{this.props.text}</span>
+        <div>
+          <p>
+            <span class="posted-by">{this.props.by}</span>
+          </p>
+          <div class="post">
+            <span>{this.props.text}</span>
+          </div>
+        </div>
       </li>
     );
   }
