@@ -66,7 +66,7 @@ class Story extends Component {
     const newComment = {
       item_id: uuidv4(),
       text: this.state.textValue,
-      by: "Amogh"
+      by: "amogh"
     };
     const newCommentsList = [...this.state.comments, newComment];
     this.setState({
